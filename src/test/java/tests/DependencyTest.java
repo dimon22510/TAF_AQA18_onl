@@ -2,6 +2,7 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import tests.testnghomework.Calculator;
 
 public class DependencyTest {
     Calculator calculator = new Calculator();

@@ -3,7 +3,6 @@ package tests.testnghomework;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.BaseTest;
-import tests.utils.Retry;
 
 public class RetryDivTest extends BaseTest {
     private int attempt = 1;

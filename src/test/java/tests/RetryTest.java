@@ -2,15 +2,13 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import tests.BaseTest;
-import utils.Retry;
 
 public class RetryTest extends BaseTest {
     private int attempt = 1;
 
     @Test (retryAnalyzer = Retry.class)
     public void flakyTest() {
-        if (attempt == 3) {
+        if (attempt == 5) {
             Assert.assertTrue(true);
         } else {
             attempt++;

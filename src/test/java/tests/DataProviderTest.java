@@ -3,6 +3,7 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.data.StaticProvider;
+import tests.testnghomework.Calculator;
 
 public class DataProviderTest {
     Calculator calculator = new Calculator();
