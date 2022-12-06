@@ -13,6 +13,7 @@ public class SimpleWDTest {
         SimpleDriver simpleDriver = new SimpleDriver();
         WebDriver driver = simpleDriver.getDriver();
         driver.quit();
+
     }
 
     @Test
