@@ -11,14 +11,15 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class CalculatorLaminateTest {               //Не разобрался с рекламой, если при начале теста прокрутить вниз до результатов,
-    private WebDriver driver;                       //то тест выполниться, а если ничего не трогать, не прожимается кнопка результата.
+
+public class CalculatorLaminateTest {
+    private WebDriver driver;
 
     @BeforeMethod
     public void setUp() {
-        BrowserFactory browserFactory = new BrowserFactory();
-        driver = browserFactory.getDriver();
-    }
+        BrowserFactory browserFactory = new BrowserFactory(); //В классе BrowserFactory я добавил параметр запуска, установил адблок,
+        driver = browserFactory.getDriver();                  // и вроде как везде должен открываться тест с адблоком. Проверьте у себя,
+    }                                                         // и отпишитесь в пул реквесте
 
     @AfterMethod
     public void tearDown() throws InterruptedException {
@@ -27,7 +28,7 @@ public class CalculatorLaminateTest {               //Не разобрался 
     }
 
 
-    @Test()
+    @Test(invocationCount = 5)
     public void dataInputTest() throws InterruptedException {
         driver.get("https://calc.by/building-calculators/laminate.html");
 

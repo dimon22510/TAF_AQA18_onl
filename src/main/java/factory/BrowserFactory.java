@@ -26,6 +26,7 @@ public class BrowserFactory {
                 chromeOptions.addArguments("--ignore-certificate-errors");
                 chromeOptions.addArguments("--silent");
                 chromeOptions.addArguments("--start-maximized");
+                chromeOptions.addArguments("user-data-dir=C:\\\\profile");      //добавленный параметр
 
                 driver = new ChromeDriver(chromeOptions);
 
@@ -43,6 +44,7 @@ public class BrowserFactory {
     }
 
     public WebDriver getDriver() {
+
 //        driver.manage().window().maximize();
 //        driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
