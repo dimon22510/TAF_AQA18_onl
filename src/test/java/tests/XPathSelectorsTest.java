@@ -23,7 +23,7 @@ public class XPathSelectorsTest {
     }
 
     @Test
-    public void cssLocatorsTest() throws InterruptedException {
+    public void xPathTest() throws InterruptedException {
         driver.get("D:\\Games\\Project\\TAF_AQA18_onl\\TAF_AQA18_onl\\src\\test\\resources\\index.html");
 
         //Абсолютный xpath
