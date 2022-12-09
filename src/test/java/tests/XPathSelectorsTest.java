@@ -64,7 +64,7 @@ public class XPathSelectorsTest {
         Assert.assertTrue(driver.findElement(By.xpath("//div[contains(@id, 'Template')]")).isDisplayed());
 
         // Поиск элемента у которого текстовое значение содержит равно
-        Assert.assertTrue(driver.findElement(By.xpath("//*[text() = 'We are all animals!']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//We are all animals!']")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.xpath("//*[. = '<table>']")).isDisplayed());
 
         // Поиск элемента у которого текстовое значение содержит подстроку
