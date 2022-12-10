@@ -19,25 +19,35 @@ public class Task_8 {
 
     @AfterMethod
     public void teatDown() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         driver.quit();
     }
 
     @Test
-    public void sauceDemoTest() throws InterruptedException {
+    public void sauceDemoTest() {
         driver.get(ReadProperties.getUrl());
 
-        //Поиск элемента по id
+        //Searching for an element by id
         driver.findElement(By.id("user-name")).sendKeys(ReadProperties.username());
-        //Поиск элемента по name
+
+        //Searching for an element by name
         driver.findElement(By.name("password")).sendKeys(ReadProperties.password());
-        //Поиск элемента по className
+
+        //Searching for an element by className
         driver.findElement(By.className("submit-button")).click();
-        //Поиск элемента по cssSelector(id)
+
+        //Searching for an element by cssSelector(id)
         driver.findElement(By.cssSelector("#add-to-cart-sauce-labs-backpack")).click();
-        //Поиск элемента по xPath(class)
-       Assert.assertEquals( driver.findElement(By.xpath("//*[@class='inventory_item_price']")).getText(),
-               "$29.99");
+
+        //Searching for an element by cssSelector(class)
+        driver.findElement(By.cssSelector(".shopping_cart_link")).click();
+
+        //Searching for an element by linkText
+        Assert.assertEquals(driver.findElement(By.linkText("Sauce Labs Backpack")).getText(),
+                "Sauce Labs Backpack");
+        //Searching for an element by xPath(attribute)
+        Assert.assertEquals(driver.findElement(By.xpath("//*[@class='inventory_item_price']")).getText(),
+                "$29.99");
 
 
     }
