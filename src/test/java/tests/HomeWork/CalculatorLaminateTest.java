@@ -23,15 +23,16 @@ public class CalculatorLaminateTest {
 
     @AfterMethod
     public void tearDown() throws InterruptedException {
-        Thread.sleep(5000);
+//        Thread.sleep(5000);
         driver.quit();
     }
 
 
-    @Test(invocationCount = 5)
+    @Test
     public void dataInputTest() throws InterruptedException {
         driver.get("https://calc.by/building-calculators/laminate.html");
 
+        driver.findElement(By.id("ln_room_id")).click();
         driver.findElement(By.id("ln_room_id")).sendKeys(Keys.CONTROL + "a"); //Можно такой вариант удаления из строки использовать
         driver.findElement(By.id("ln_room_id")).sendKeys(Keys.DELETE);
         driver.findElement(By.id("ln_room_id")).sendKeys("5463");
@@ -60,8 +61,6 @@ public class CalculatorLaminateTest {
 
         Assert.assertEquals(driver.findElement(By.xpath("//div[text()='Количество упаковок ламината: ']")).getText(),
                 "Количество упаковок ламината: 625");
-
-
     }
 
 
