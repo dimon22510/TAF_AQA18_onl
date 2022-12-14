@@ -16,6 +16,7 @@ public class LoginTest2 extends BaseTest {
         loginPage.getPassword().sendKeys(ReadProperties.password());
         loginPage.getLogInButton().click();
 
+
         Assert.assertTrue(new DashboardPage(driver).isPageOpened());
     }
 
@@ -35,4 +36,6 @@ public class LoginTest2 extends BaseTest {
                 "Email/Login or Password is incorrect. Please try again."
         );
     }
+
+
 }

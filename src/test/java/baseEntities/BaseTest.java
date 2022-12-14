@@ -1,4 +1,4 @@
-package baseEntites;
+package baseEntities;
 
 import configuration.ReadProperties;
 import factory.BrowserFactory;

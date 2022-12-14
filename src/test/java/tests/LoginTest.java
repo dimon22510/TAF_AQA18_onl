@@ -1,6 +1,6 @@
 package tests;
 
-import baseEntites.BaseTest;
+import baseEntities.BaseTest;
 import configuration.ReadProperties;
 import org.openqa.selenium.By;
 import org.testng.Assert;
