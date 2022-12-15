@@ -46,7 +46,7 @@ public class BrowserFactory {
 //        driver.manage().window().maximize();
 //        driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         return driver;
     }
 }
