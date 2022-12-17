@@ -4,6 +4,8 @@
     <file url="file://$PROJECT_DIR$/src/test/java/baseEntities/BasePage.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/test/java/baseEntities/BaseStep.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/test/java/pages/DashboardPage.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/test/java/pages2/DashboardPage.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/pages2/LoginPage.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/tests/CSSSelectorsTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/tests/LoginTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/tests/LoginTest2.java" charset="windows-1251" />
