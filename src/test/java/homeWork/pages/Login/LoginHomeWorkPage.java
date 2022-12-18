@@ -1,4 +1,4 @@
-package homeWork.pages;
+package homeWork.pages.Login;
 
 import homeWork.baseEntites.BaseHomeWorkPage;
 import org.openqa.selenium.By;
@@ -14,8 +14,16 @@ public class LoginHomeWorkPage extends BaseHomeWorkPage {
     public LoginHomeWorkPage(WebDriver driver) {
         super(driver);
     }
+    @Override
+    protected By getPageIdentifier() {
+        return logInButtonLocator;
+    }
 
-    public WebElement getUserNameInput() {return driver.findElement(userNameInputLocator);}
+
+
+    public WebElement getUserNameInput() { return driver.findElement(userNameInputLocator);}
     public WebElement getPasswordInput() {return driver.findElement(passwordInputLocator);}
-    public WebElement getLogInButton() {return  driver.findElement(logInButtonLocator);}
+    public WebElement getLogInButton() {
+        return driver.findElement(logInButtonLocator);
+    }
 }
