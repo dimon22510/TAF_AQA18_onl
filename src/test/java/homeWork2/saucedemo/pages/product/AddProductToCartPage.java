@@ -1,21 +1,21 @@
-package homeWork.pages.AddToCart;
+package homeWork2.saucedemo.pages.product;
 
-import homeWork.baseEntites.BaseHomeWorkPage;
+import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class AddToCartPage extends BaseHomeWorkPage {
-    private final By buttonAddToCartLocator = By.id("add-to-cart-sauce-labs-bike-light");
+public class AddProductToCartPage extends BasePage {
+    private final By buttonAddToCartLocator = By.id("add-to-cart-sauce-labs-bolt-t-shirt");
     private final By cartButtonLocator = By.className("shopping_cart_link");
 
-    public AddToCartPage(WebDriver driver) {
+    public AddProductToCartPage(WebDriver driver) {
         super(driver);
     }
 
     @Override
     protected By getPageIdentifier() {
-        return buttonAddToCartLocator;
+        return cartButtonLocator;
     }
 
     public WebElement getButtonAddToCart() {return driver.findElement(buttonAddToCartLocator);}
