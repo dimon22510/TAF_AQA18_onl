@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/baseEntities/BasePage.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/test/java/baseEntities/BaseStep.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/test/java/pages/DashboardPage.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/test/java/tests/CSSSelectorsTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/tests/FrameTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/tests/JSTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/tests/LoginTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/tests/LoginTest2.java" charset="windows-1251" />
