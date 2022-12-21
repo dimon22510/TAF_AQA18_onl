@@ -17,7 +17,7 @@ public abstract class BasePage {
     protected abstract By getPageIdentifier();
 
     public boolean isPageOpened() {
-        return driver.findElement(getPageIdentifier()).isDisplayed();
+        return waitService.waitForVisibilityBy(getPageIdentifier()).isDisplayed();
     }
 
     public void openPageByUrl(String pagePath) {
