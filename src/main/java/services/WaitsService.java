@@ -2,6 +2,7 @@ package services;
 
 import configuration.ReadProperties;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,16 +13,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class WaitService {
+public class WaitsService {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public WaitService(WebDriver driver) {
+    public WaitsService(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(ReadProperties.timeout()));
     }
 
-    public WaitService(WebDriver driver, Duration timeout) {
+    public WaitsService(WebDriver driver, Duration timeout) {
         this.driver = driver;
         wait = new WebDriverWait(driver, timeout);
     }
@@ -30,18 +31,8 @@ public class WaitService {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
-    public boolean waitForElementInvisibleBy(WebElement webElement) {
+    public boolean waitForElementInvisible(WebElement webElement) {
         return wait.until(ExpectedConditions.invisibilityOf(webElement));
-    }
-
-    public WebElement fluentWaitForElement(By by) {
-        Wait<WebDriver> fluent = new FluentWait<>(driver)
-                .withTimeout(Duration.ofSeconds(30))
-                .pollingEvery(Duration.ofMillis(50))
-                .ignoring(NoSuchFieldError.class);
-
-        return fluent.until(driver -> driver.findElement(by));
-
     }
 
     public List<WebElement> waitForAllVisibleElementsLocatedBy(By locator) {
@@ -53,6 +44,12 @@ public class WaitService {
     }
 
 
+    public WebElement fluentWaitForElement(By by) {
+        Wait<WebDriver> fluent = new FluentWait<>(driver)
+                .withTimeout(Duration.ofSeconds(30))
+                .pollingEvery(Duration.ofMillis(50))
+                .ignoring(NoSuchElementException.class);
 
-
+        return fluent.until(driver -> driver.findElement(by));
+    }
 }
