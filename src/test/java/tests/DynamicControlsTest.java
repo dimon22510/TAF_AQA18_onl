@@ -3,11 +3,10 @@ package tests;
 import baseEntities.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class DynamicControls extends BaseTest {
+public class DynamicControlsTest extends BaseTest {
 
     @Test
     public void checkBoxTest() {
@@ -19,7 +18,7 @@ public class DynamicControls extends BaseTest {
                 .build()
                 .perform();
 
-        Assert.assertEquals(waitService.waitForVisibilityBy(By.id("message")).getText(),"It's gone!");
+        Assert.assertEquals(waitService.waitForVisibilityBy(By.id("message")).getText(), "It's gone!");
         Assert.assertTrue(waitService.waitForElementInvisibleBy(checkBox));
     }
 
@@ -34,7 +33,7 @@ public class DynamicControls extends BaseTest {
                 .click(waitService.waitForVisibilityBy(By.cssSelector("[onclick = 'swapInput()']")))
                 .build()
                 .perform();
-        Assert.assertEquals(waitService.waitForVisibilityBy(By.id("message")).getText(),"It's enabled!");
+        Assert.assertEquals(waitService.waitForVisibilityBy(By.id("message")).getText(), "It's enabled!");
         Assert.assertTrue(input.isEnabled());
     }
 }
