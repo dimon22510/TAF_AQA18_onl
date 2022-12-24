@@ -20,8 +20,8 @@ public class FrameTest extends BaseTest {
 
         driver.findElement(By.xpath("//p[. = 'Your content goes here.']")).isDisplayed();
 
-        //driver.switchTo().parentFrame(); // Переключиться в родительский документ
-        driver.switchTo().defaultContent(); // Переключает в первоначальный документ
+        //driver.switchTo().parentFrame(); // РџРµСЂРµРєР»СЋС‡РёС‚СЊСЃСЏ РІ СЂРѕРґРёС‚РµР»СЊСЃРєРёР№ РґРѕРєСѓРјРµРЅС‚ РЅР° РѕРґРёРЅ СѓСЂРѕРІРµРЅСЊ РІС‹С€Рµ
+        driver.switchTo().defaultContent(); // РџРµСЂРµРєР»СЋС‡Р°РµС‚ РІ РїРµСЂРІРѕРЅР°С‡Р°Р»СЊРЅС‹Р№ РґРѕРєСѓРјРµРЅС‚
 
         driver.findElement(By.tagName("h3")).isDisplayed();
     }
