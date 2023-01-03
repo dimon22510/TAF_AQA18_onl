@@ -2,6 +2,7 @@ package tests;
 
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
+import io.qameta.allure.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -20,7 +21,13 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(new DashboardPage(driver).isPageOpened());
     }
 
-    @Test
+    @Test (description = "Description")
+    @Issue("AQA18-12")
+    @TmsLink("TC-001")
+    @Description("Description1")
+    @Link("https://onliner.by")
+    @Link(name ="catalog", type = "myLink", url = "https://onliner.by")
+    @Severity(SeverityLevel.BLOCKER)
     public void loginSuccessfulTest() {
         Assert.assertTrue(
                 userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password())
@@ -28,16 +35,16 @@ public class LoginTest extends BaseTest {
         );
     }
 
-    //@Test
+    @Test
     public void loginIncorrectTest() {
         Assert.assertEquals(
                 userStep.loginIncorrect(ReadProperties.username(), "sdfsdfsdf")
                 .getErrorTextElement().getText(),
-                "Email/Login or Password is incorrect. Please try again."
+                "Email/Login or Password is incorrect. Please try again1."
         );
     }
 
-    //@Test
+    @Test
     public void addProjectTest() {
         userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password());
         projectSteps.addProject("WP_01");
