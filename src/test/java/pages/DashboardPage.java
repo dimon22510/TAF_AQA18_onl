@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 public class DashboardPage extends BasePage {
     private final static String pagePath = "index.php?/admin/subscription";
 
-    private final By headerTitleLabelLocator = By.xpath("//*[text() ='Error']");
+    private final By headerTitleLabelLocator = By.xpath("//div[contains(text(), 'All Projects')]");
 
     public DashboardPage(WebDriver driver) {
         super(driver);
