@@ -12,7 +12,7 @@ public class Table {
     private List<String> columns;
 
     /**
-     * Данный жлемент идентифицируется по тэгу table обязательно
+     * Данный элемент идентифицируется по тэгу table обязательно
      *
      * @param driver
      * @param by
