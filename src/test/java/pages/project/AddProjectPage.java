@@ -36,5 +36,5 @@ public class AddProjectPage extends BasePage {
 
     public RadioButton getType() {return new RadioButton(driver, "suite_mode");}
 
-    public CheckBox getCheckBox() {return new CheckBox(driver,"show_announcement");}
+    public CheckBox getCheckBox() {return new CheckBox(driver,"");}
 }

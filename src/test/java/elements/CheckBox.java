@@ -1,6 +1,5 @@
 package elements;
 
-import com.beust.ah.A;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,9 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CheckBox {
+    private UIElement uiElement;
     private List<UIElement> uiElementsList;
     private List<String> valueList;
     private List<String> textList;
+
+    public CheckBox(WebDriver driver, By by) {
+        this.uiElement = new UIElement(driver, by);
+    }
 
     public CheckBox(WebDriver driver, String nameElement) {
         uiElementsList = new ArrayList<>();
@@ -24,6 +28,26 @@ public class CheckBox {
             valueList.add(element.getAttribute("value"));
             textList.add(element.findUIElement(By.xpath("parent::*/strong")).getText());
         }
+    }
+
+
+
+    private void click(boolean flag) {
+        if (flag != uiElement.isSelected()) {
+            uiElement.click();
+        }
+    }
+
+    public void clickCheckBox() {
+        click(true);
+    }
+
+    public void removeCheckBox() {
+        click(false);
+    }
+
+    public boolean isSelected() {
+        return uiElement.isSelected();
     }
 
     public void selectByIndex(int index) {
