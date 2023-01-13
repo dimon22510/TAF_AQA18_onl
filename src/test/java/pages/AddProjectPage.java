@@ -1,17 +1,18 @@
-package pages.project;
+package pages;
 
 import baseEntities.BasePage;
 import elements.CheckBox;
 import elements.RadioButton;
+import elements.UIElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class AddProjectPage extends BasePage {
     private final static String pagePath = "index.php?/admin/projects/add";
-
     private final By addProjectButtonLocator = By.id("accept");
     private final By nameInputLocator = By.id("name");
+
 
     public AddProjectPage(WebDriver driver) {
         super(driver);
@@ -26,15 +27,19 @@ public class AddProjectPage extends BasePage {
         super.openPageByUrl(pagePath);
     }
 
-    public WebElement getAddProjectButton() {
-        return driver.findElement(addProjectButtonLocator);
+    public UIElement getAddProjectButton() {
+        return new UIElement(driver, addProjectButtonLocator);
     }
 
-    public WebElement getNameInput() {
-        return driver.findElement(nameInputLocator);
+    public UIElement getNameInput() {
+        return new UIElement(driver, nameInputLocator);
     }
 
-    public RadioButton getType() {return new RadioButton(driver, "suite_mode");}
+    public RadioButton getType() {
+        return new RadioButton(driver, "suite_mode");
+    }
 
-    public CheckBox getCheckBox() {return new CheckBox(driver,"");}
+    public CheckBox getCheckBox() {
+        return new CheckBox(driver, "show_announcement");
+    }
 }

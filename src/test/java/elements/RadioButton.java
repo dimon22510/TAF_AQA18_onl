@@ -13,10 +13,6 @@ public class RadioButton {
     private List<String> valueList;
     private List<String> textList;
 
-
-    //Продумать механизм поиска элемента
-    //поиск по name
-
     public RadioButton(WebDriver driver, String attributeNameValue) {
         uiElementsList = new ArrayList<>();
         valueList = new ArrayList<>();
@@ -30,11 +26,6 @@ public class RadioButton {
         }
     }
 
-
-    //Добавить методы для работы с ним
-    //selectByValue
-    //selectByText
-    //selectByIndex
     public void selectByIndex(int index) {
         uiElementsList.get(index).click();
     }
@@ -46,6 +37,4 @@ public class RadioButton {
     public void selectByText(String text) {
         uiElementsList.get(textList.indexOf(text)).click();
     }
-
-    //Проверить что поиск и методы работают на всех похожих элементах сайта
 }

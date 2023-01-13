@@ -17,12 +17,12 @@ public class CheckBox {
         this.uiElement = new UIElement(driver, by);
     }
 
-    public CheckBox(WebDriver driver, String nameElement) {
+    public CheckBox(WebDriver driver, String attributeNameValue) {
         uiElementsList = new ArrayList<>();
         valueList = new ArrayList<>();
         textList = new ArrayList<>();
 
-        for (WebElement webElement : driver.findElements(By.name(nameElement))) {
+        for (WebElement webElement : driver.findElements(By.name(attributeNameValue))) {
             UIElement element = new UIElement(driver, webElement);
             uiElementsList.add(element);
             valueList.add(element.getAttribute("value"));
@@ -30,24 +30,18 @@ public class CheckBox {
         }
     }
 
-
-
-    private void click(boolean flag) {
+    public void selectCheckBox(boolean flag) {
         if (flag != uiElement.isSelected()) {
             uiElement.click();
         }
     }
 
     public void clickCheckBox() {
-        click(true);
+        selectCheckBox(true);
     }
 
     public void removeCheckBox() {
-        click(false);
-    }
-
-    public boolean isSelected() {
-        return uiElement.isSelected();
+        selectCheckBox(false);
     }
 
     public void selectByIndex(int index) {

@@ -8,8 +8,8 @@ import org.openqa.selenium.WebElement;
 
 public class EditPR01Page extends BasePage {
     private final static String pagePath = "index.php?/admin/projects/edit/1/1";
-    private final By saveProjectButton = By.id("accept");
-
+    private final By checkBoxAnnouncementLocator = By.name("show_announcement");
+    private final By checkBoxIsCompletedLocator = By.name("is_completed");
 
     public EditPR01Page(WebDriver driver) {
         super(driver);
@@ -24,8 +24,8 @@ public class EditPR01Page extends BasePage {
         super.openPageByUrl(pagePath);
     }
 
-    public WebElement getSaveProjectButton() {return driver.findElement(saveProjectButton);}
+    public CheckBox getCheckBoxAnnouncement() {return new CheckBox(driver, checkBoxAnnouncementLocator);}
 
-    public CheckBox getCheckBox() {return new CheckBox(driver,"is_completed");}
+    public CheckBox getCheckBoxIsCompleted() {return new CheckBox(driver,checkBoxIsCompletedLocator);}
 
 }

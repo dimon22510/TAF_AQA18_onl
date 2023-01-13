@@ -8,8 +8,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DashboardPage;
 import pages.LoginPage;
-import pages.project.AddProjectPage;
-import steps.NavigationSteps;
 
 public class LoginTest extends BaseTest {
 

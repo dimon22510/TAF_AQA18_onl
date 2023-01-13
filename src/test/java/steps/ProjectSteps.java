@@ -2,21 +2,21 @@ package steps;
 
 import baseEntities.BaseStep;
 import org.openqa.selenium.WebDriver;
-import pages.project.AddProjectPage;
-import pages.project_pr01.EditPR01Page;
+import pages.AddProjectPage;
+import pages.project_pr01.AddTestCasesPage;
 import pages.project_pr01.ProjectPr01Page;
 
 public class ProjectSteps extends BaseStep {
     private AddProjectPage addProjectPage;
     private ProjectPr01Page projectPr01Page;
-    private EditPR01Page editPR01Page;
+    private AddTestCasesPage addTestCasesPage;
 
     public ProjectSteps(WebDriver driver) {
         super(driver);
 
         addProjectPage = new AddProjectPage(driver);
         projectPr01Page = new ProjectPr01Page(driver);
-        editPR01Page = new EditPR01Page(driver);
+        addTestCasesPage = new AddTestCasesPage(driver);
     }
 
     public void addProject(String projectName) {
@@ -30,15 +30,7 @@ public class ProjectSteps extends BaseStep {
         projectPr01Page.getClickProjectLocator().click();
     }
 
-    public void editProject() {
-        editPR01Page.getSaveProjectButton().click();
-    }
-
-    public void updateProject() {
-
-    }
-
-    public void deleteProject() {
-
+    public void clickAddTestCasesProject() {
+        addTestCasesPage.getAddTestCasesLocator().click();
     }
 }
