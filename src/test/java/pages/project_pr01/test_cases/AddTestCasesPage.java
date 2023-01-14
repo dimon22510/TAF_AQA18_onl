@@ -7,8 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class AddTestCasesPage extends BasePage {
-    private DropDownMenu dropDownMenu;
-
+    private final By liIdLocator = By.id("type_id_chzn_o_0");
     private final By addTestCasesLocator = By.id("sidebar-cases-add");
     private final static String pagePath = "index.php?/cases/add/1";
 
@@ -25,21 +24,7 @@ public class AddTestCasesPage extends BasePage {
         super.openPageByUrl(pagePath);
     }
 
-    public UIElement getAddTestCasesLocator() {
-        return new UIElement(driver, addTestCasesLocator);
-    }
-
-    public DropDownMenu getDropDownList() {
-        return new DropDownMenu(driver,"chzn-single");
-    }
-
-    public DropDownMenu getText() {
-        return new DropDownMenu(driver,"chzn-search");
-    }
-
-    public DropDownMenu getExploratory() {
-        return new DropDownMenu(driver,By.id("template_id_chzn_o_0"));
-    }
-
-
+    public UIElement getAddTestCasesLocator() {return new UIElement(driver, addTestCasesLocator);}
+    public DropDownMenu getDropDownList() {return new DropDownMenu(driver,"chzn-single");}
+    public DropDownMenu getLiIdLocator() {return new DropDownMenu(driver,liIdLocator);}
 }
