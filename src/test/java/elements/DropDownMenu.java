@@ -11,7 +11,6 @@ import java.util.List;
 public class DropDownMenu {
     private List<UIElement> uiElementsListDropDown;
     private UIElement uiElement;
-    private WaitsService waitsService;
 
     public DropDownMenu (WebDriver driver, By by) {
         this.uiElement = new UIElement(driver, by);
@@ -19,7 +18,6 @@ public class DropDownMenu {
 
     public DropDownMenu (WebDriver driver, String allListDropDown) {
         uiElementsListDropDown = new ArrayList<>();
-        this.waitsService = new WaitsService(driver);
 
         for (WebElement webElement : driver.findElements(By.className(allListDropDown))){
             UIElement element = new UIElement(driver, webElement);
