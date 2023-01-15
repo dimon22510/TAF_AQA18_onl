@@ -30,8 +30,8 @@ public class CheckBox {
         }
     }
 
-    public void selectCheckBox(boolean flag) {
-        if (flag != uiElement.isSelected()) {
+    public void selectCheckBox(boolean condition) {
+        if (condition != uiElement.isSelected()) {
             uiElement.click();
         }
     }

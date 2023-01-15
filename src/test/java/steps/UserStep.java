@@ -21,16 +21,9 @@ public class UserStep extends BaseStep {
         loginPage.getLogInButton().click();
     }
 
-
     public DashboardPage loginSuccessful(String email, String psw) {
         login(email, psw);
 
         return new DashboardPage(driver);
-    }
-
-    public LoginPage loginIncorrect(String email, String psw) {
-        login(email, psw);
-
-        return loginPage;
     }
 }

@@ -10,9 +10,6 @@ import org.openqa.selenium.WebElement;
 
 public class AddProjectPage extends BasePage {
     private final static String pagePath = "index.php?/admin/projects/add";
-    private final By addProjectButtonLocator = By.id("accept");
-    private final By nameInputLocator = By.id("name");
-
 
     public AddProjectPage(WebDriver driver) {
         super(driver);
@@ -25,14 +22,6 @@ public class AddProjectPage extends BasePage {
 
     public void openPageByUrl() {
         super.openPageByUrl(pagePath);
-    }
-
-    public UIElement getAddProjectButton() {
-        return new UIElement(driver, addProjectButtonLocator);
-    }
-
-    public UIElement getNameInput() {
-        return new UIElement(driver, nameInputLocator);
     }
 
     public RadioButton getType() {

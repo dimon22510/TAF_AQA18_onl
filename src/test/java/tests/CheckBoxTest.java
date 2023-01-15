@@ -25,9 +25,9 @@ public class CheckBoxTest extends BaseTest {
         projectSteps.clickProjectPR01();
         EditPR01Page page = new NavigationSteps(driver).navigateToEditProjectPage();
 
-        page.getCheckBoxAnnouncement().clickCheckBox();
         page.getCheckBoxAnnouncement().removeCheckBox();
-        page.getCheckBoxIsCompleted().clickCheckBox();
+        page.getCheckBoxAnnouncement().clickCheckBox();
         page.getCheckBoxIsCompleted().removeCheckBox();
+        page.getCheckBoxIsCompleted().clickCheckBox();
     }
 }

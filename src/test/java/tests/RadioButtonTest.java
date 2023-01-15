@@ -7,7 +7,6 @@ import pages.AddProjectPage;
 import steps.NavigationSteps;
 
 public class RadioButtonTest extends BaseTest {
-
     @Test
     public void radioButtonTest() {
         userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password());

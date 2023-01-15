@@ -27,5 +27,4 @@ public class EditPR01Page extends BasePage {
     public CheckBox getCheckBoxAnnouncement() {return new CheckBox(driver, checkBoxAnnouncementLocator);}
 
     public CheckBox getCheckBoxIsCompleted() {return new CheckBox(driver,checkBoxIsCompletedLocator);}
-
 }
