@@ -81,21 +81,21 @@ public class UIElement implements WebElement {
         return webElement.findElements(by);
     }
 
+    @Override
+    public WebElement findElement(By by) {
+        return webElement.findElement(by);
+    }
+
+    public UIElement findUIElement(By by) {
+        return new UIElement(driver, webElement.findElement(by));
+    }
+
     public List<UIElement> findUIElements(By by) {
         ArrayList<UIElement> list = new ArrayList<>();
         for (WebElement element : webElement.findElements(by)) {
             list.add(new UIElement(driver, element));
         }
         return list;
-    }
-
-    @Override
-    public WebElement findElement(By by) {
-        return webElement.findElement(by);
-    }
-
-    public WebElement findUIElement(By by) {
-        return new UIElement(driver, webElement.findElement(by));
     }
 
     @Override

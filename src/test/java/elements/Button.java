@@ -8,11 +8,11 @@ public class Button {
     private UIElement uiElement;
 
     public Button(WebDriver driver, By by) {
-        this.uiElement = uiElement;
+        this.uiElement = new UIElement(driver, by);
     }
 
     public Button(WebDriver driver, WebElement webElement) {
-        this.uiElement = uiElement;
+        this.uiElement = new UIElement(driver, webElement);
     }
 
     public void click() {
