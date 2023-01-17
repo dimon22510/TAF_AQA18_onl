@@ -14,9 +14,8 @@ public class CheckBoxTest extends BaseTest {
         userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password());
         AddProjectPage page = new NavigationSteps(driver).navigateToAddProjectPage();
 
-        page.getCheckBox().selectByIndex(0);
-        page.getCheckBox().selectByValue("1");
-        page.getCheckBox().selectByText("Show the announcement on the overview page");
+        page.getCheckBox().setCheckBox();
+        page.getCheckBox().removeCheckBox();
     }
 
     @Test
@@ -26,8 +25,8 @@ public class CheckBoxTest extends BaseTest {
         EditPR01Page page = new NavigationSteps(driver).navigateToEditProjectPage();
 
         page.getCheckBoxAnnouncement().removeCheckBox();
-        page.getCheckBoxAnnouncement().clickCheckBox();
+        page.getCheckBoxAnnouncement().setCheckBox();
         page.getCheckBoxIsCompleted().removeCheckBox();
-        page.getCheckBoxIsCompleted().clickCheckBox();
+        page.getCheckBoxIsCompleted().setCheckBox();
     }
 }

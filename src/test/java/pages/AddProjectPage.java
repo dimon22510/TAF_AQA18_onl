@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 
 public class AddProjectPage extends BasePage {
     private final static String pagePath = "index.php?/admin/projects/add";
+    private final By checkBox = By.name("show_announcement");
 
     public AddProjectPage(WebDriver driver) {
         super(driver);
@@ -29,6 +30,6 @@ public class AddProjectPage extends BasePage {
     }
 
     public CheckBox getCheckBox() {
-        return new CheckBox(driver, "show_announcement");
+        return new CheckBox(driver, checkBox);
     }
 }
