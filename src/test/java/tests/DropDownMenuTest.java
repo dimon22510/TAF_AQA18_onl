@@ -12,8 +12,10 @@ public class DropDownMenuTest extends BaseTest {
         userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password());
         projectSteps.clickProjectPR01();
         AddTestCasesPage page = new NavigationSteps(driver).navigateToTestCasesPage();
-        page.getDropDownList().selectionByIndexDropDownMenuElement(2);
-        page.getLiIdLocator().clickLiIdElement();
+
+        page.getDropDownMenu().search("Crit");
+        page.getDropDownMenu().selectByText("Critical");
+
 
     }
 }

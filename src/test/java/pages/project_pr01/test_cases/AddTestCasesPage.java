@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class AddTestCasesPage extends BasePage {
-    private final By liIdLocator = By.id("type_id_chzn_o_0");
     private final static String pagePath = "index.php?/cases/add/1";
 
     public AddTestCasesPage(WebDriver driver) {
@@ -22,6 +21,5 @@ public class AddTestCasesPage extends BasePage {
         super.openPageByUrl(pagePath);
     }
 
-    public DropDownMenu getDropDownList() {return new DropDownMenu(driver,"chzn-single");}
-    public DropDownMenu getLiIdLocator() {return new DropDownMenu(driver,liIdLocator);}
+    public DropDownMenu getDropDownMenu() {return new DropDownMenu(driver,"priority_id_chzn");}
 }
