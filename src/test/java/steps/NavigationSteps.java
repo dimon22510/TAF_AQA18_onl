@@ -14,6 +14,7 @@ public class NavigationSteps extends BaseStep {
     public AddProjectPage navigateToAddProjectPage() {
         AddProjectPage page = new AddProjectPage(driver);
         page.openPageByUrl();
+        page.getReferencesButtonLocator().click();
 
         return page;
     }
