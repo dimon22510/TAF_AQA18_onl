@@ -4,6 +4,7 @@ import baseEntities.BaseTest;
 import configuration.ReadProperties;
 import io.qameta.allure.*;
 import models.Project;
+import models.User;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -24,17 +25,22 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(new DashboardPage(driver).isPageOpened());
     }
 
-    @Test (description = "Description")
+    @Test(description = "Description")
     @Issue("AQA18-12")
     @TmsLink("TC-001")
     @Description("Description1")
     @Link("https://onliner.by")
-    @Link(name ="catalog", type = "myLink", url = "https://onliner.by")
+    @Link(name = "catalog", type = "myLink", url = "https://onliner.by")
     @Severity(SeverityLevel.BLOCKER)
     public void loginSuccessfulTest() {
+        User user = new User.Builder()
+                .withEmail(ReadProperties.username())
+                .withPassword(ReadProperties.password())
+                .build();
+
         Assert.assertTrue(
-                userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password())
-                .isPageOpened()
+                userStep.loginSuccessful(user)
+                        .isPageOpened()
         );
     }
 
@@ -42,7 +48,7 @@ public class LoginTest extends BaseTest {
     public void loginIncorrectTest() {
         Assert.assertEquals(
                 userStep.loginIncorrect(ReadProperties.username(), "sdfsdfsdf")
-                .getErrorTextElement().getText(),
+                        .getErrorTextElement().getText(),
                 "Email/Login or Password is incorrect. Please try again1."
         );
     }
