@@ -1,5 +1,5 @@
-Тест сценарий позитивного e2e теста для сайта: https://www.saucedemoChainOfInvocations.com/
-1. Открыть Web-сайт: https://www.saucedemoChainOfInvocations.com/
+Тест сценарий позитивного e2e теста для сайта: https://www.sauceDemo.com/
+1. Открыть Web-сайт: https://www.sauceDemo.com/
 2. Залогиниться на странице входа в аккаунт.
 3. Добавить в корзину товар Sauce Labs Bolt T-Shirt
 4. Перейти в корзину
