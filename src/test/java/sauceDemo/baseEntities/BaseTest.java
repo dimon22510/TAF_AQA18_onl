@@ -2,6 +2,7 @@ package sauceDemo.baseEntities;
 
 import configuration.ReadProperties;
 import factory.BrowserFactory;
+import lombok.RequiredArgsConstructor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -18,7 +19,7 @@ public class BaseTest {
         driver = new BrowserFactory().getDriver();
         driver.get(ReadProperties.getUrl());
 
-        userSteps = new UserSteps(driver, new CheckoutSteps(driver));
+        userSteps = new UserSteps(driver);
     }
 
     @AfterMethod(enabled = true)

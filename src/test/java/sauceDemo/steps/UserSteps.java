@@ -4,16 +4,13 @@ import org.openqa.selenium.WebDriver;
 import sauceDemo.baseEntities.BaseStep;
 import sauceDemo.models.User;
 import sauceDemo.pages.login.LoginPage;
-
 public class UserSteps extends BaseStep {
     private LoginPage loginPage;
-    private CheckoutSteps checkoutStep;
 
-    public UserSteps(WebDriver driver, CheckoutSteps checkoutStep) {
+    public UserSteps(WebDriver driver) {
         super(driver);
 
         this.loginPage = new LoginPage(driver);
-        this.checkoutStep = checkoutStep;
     }
 
     public void login(String username, String password) {
@@ -25,7 +22,7 @@ public class UserSteps extends BaseStep {
     public CheckoutSteps successfulLogin(User user) {
         login(user.getUsername(), user.getPassword());
 
-        return checkoutStep;
+        return new CheckoutSteps(driver);
     }
 }
 

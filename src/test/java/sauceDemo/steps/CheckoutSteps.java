@@ -1,5 +1,7 @@
 package sauceDemo.steps;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import sauceDemo.baseEntities.BaseStep;
 import sauceDemo.models.User;
 import sauceDemo.pages.cart.CartPage;
@@ -10,7 +12,7 @@ import sauceDemo.pages.product.ProductPage;
 
 public class CheckoutSteps extends BaseStep {
     private CartPage checkProductAndPricePage;
-    private OverviewPage dataCheckPage;
+    private OverviewPage overviewPage;
     private DataInputPage dataInputPage;
     private ProductPage addProductToCartPage;
 
@@ -20,7 +22,7 @@ public class CheckoutSteps extends BaseStep {
         checkProductAndPricePage = new CartPage(driver);
         dataInputPage = new DataInputPage(driver);
         addProductToCartPage = new ProductPage(driver);
-        dataCheckPage = new OverviewPage(driver);
+        overviewPage = new OverviewPage(driver);
     }
 
     public CheckoutSteps addToCartProduct() {
@@ -47,7 +49,7 @@ public class CheckoutSteps extends BaseStep {
     }
 
     public OverviewPage clickFinish() {
-        dataCheckPage.buttonFinish.click();
+        overviewPage.buttonFinish.click();
         return new OverviewPage(driver);
     }
 }
