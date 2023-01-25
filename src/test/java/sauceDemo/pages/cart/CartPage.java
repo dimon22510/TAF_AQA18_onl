@@ -15,7 +15,7 @@ public class CartPage extends BasePage {
     public CartPage(WebDriver driver) {
         super(driver);
 
-        logger.error("В классе CartPage реализован паттерн PageFactory");
+        logger.info("В классе CartPage реализован паттерн PageFactory");
     }
 
     @Override

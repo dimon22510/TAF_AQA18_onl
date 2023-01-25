@@ -21,7 +21,7 @@ public class DataInputPage extends BasePage {
     public DataInputPage(WebDriver driver) {
         super(driver);
 
-        logger.error("В классе DataInputPage реализован паттерн PageFactory");
+        logger.info("В классе DataInputPage реализован паттерн PageFactory");
     }
 
     @Override

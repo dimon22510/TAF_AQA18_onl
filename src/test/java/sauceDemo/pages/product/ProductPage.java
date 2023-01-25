@@ -12,12 +12,12 @@ public class ProductPage extends BasePage {
     public WebElement buttonAddToCart;
     @FindBy(className = "shopping_cart_link")
     public WebElement cartButton;
-    Logger logger = LogManager.getLogger(ProductPage.class);
+    Logger logger = LogManager.getLogger();
 
     public ProductPage(WebDriver driver) {
         super(driver);
 
-        logger.error("В классе ProductPage реализован паттерн PageFactory");
+        logger.info("В классе ProductPage реализован паттерн PageFactory");
     }
 
     @Override
