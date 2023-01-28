@@ -12,12 +12,12 @@ public class OverviewPage extends BasePage {
     public WebElement buttonFinish;
     @FindBy(xpath = "//*[text()='THANK YOU FOR YOUR ORDER']")
     WebElement completePage;
-    Logger logger = LogManager.getLogger(OverviewPage.class);
+    Logger logger = LogManager.getLogger();
 
     public OverviewPage(WebDriver driver) {
         super(driver);
 
-        logger.info("В классе OverviewPage реализован паттерн PageFactory");
+        logger.info("The OverviewPage class implements the PageFactory pattern");
     }
 
     @Override

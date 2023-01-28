@@ -16,13 +16,8 @@ public class LoginPage extends BasePage {
     @FindBy(id = "login-button")
     public WebElement logInButton;
 
-    Logger logger = LogManager.getLogger();
-
-
     public LoginPage(WebDriver driver) {
         super(driver);
-
-        logger.info("В классе LoginPage реализован паттерн PageFactory");
     }
 
     @Override

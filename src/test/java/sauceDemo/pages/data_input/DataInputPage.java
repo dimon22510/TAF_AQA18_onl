@@ -16,12 +16,12 @@ public class DataInputPage extends BasePage {
     public WebElement inputZIPCode;
     @FindBy(id = "continue")
     public WebElement buttonContinue;
-    Logger logger = LogManager.getLogger(DataInputPage.class);
+    Logger logger = LogManager.getLogger();
 
     public DataInputPage(WebDriver driver) {
         super(driver);
 
-        logger.info("В классе DataInputPage реализован паттерн PageFactory");
+        logger.info("The DataInputPage class implements the PageFactory pattern");
     }
 
     @Override

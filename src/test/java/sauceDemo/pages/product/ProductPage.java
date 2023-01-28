@@ -17,7 +17,7 @@ public class ProductPage extends BasePage {
     public ProductPage(WebDriver driver) {
         super(driver);
 
-        logger.info("В классе ProductPage реализован паттерн PageFactory");
+        logger.info("The ProductPage class implements the PageFactory pattern");
     }
 
     @Override

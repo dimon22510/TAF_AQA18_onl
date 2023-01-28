@@ -10,12 +10,12 @@ import sauceDemo.baseEntities.BasePage;
 public class CartPage extends BasePage {
     @FindBy(id = "checkout")
     public WebElement buttonCheckOut;
-    Logger logger = LogManager.getLogger(CartPage.class);
+    Logger logger = LogManager.getLogger();
 
     public CartPage(WebDriver driver) {
         super(driver);
 
-        logger.info("В классе CartPage реализован паттерн PageFactory");
+        logger.info("The CartPage class implements the PageFactory pattern");
     }
 
     @Override

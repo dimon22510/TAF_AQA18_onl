@@ -1,5 +1,7 @@
 package sauceDemo.steps;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import sauceDemo.baseEntities.BaseStep;
 import sauceDemo.models.User;
 import sauceDemo.pages.cart.CartPage;
@@ -13,6 +15,7 @@ public class CheckoutSteps extends BaseStep {
     private OverviewPage overviewPage;
     private DataInputPage dataInputPage;
     private ProductPage addProductToCartPage;
+    Logger logger = LogManager.getLogger();
 
     public CheckoutSteps(WebDriver driver) {
         super(driver);
@@ -39,6 +42,7 @@ public class CheckoutSteps extends BaseStep {
     }
 
     public CheckoutSteps dataInputAndGoToOverview(User user) {
+        logger.info("This step uses the User object which contains: " + user + " values");
         dataInputPage.inputFirstName.sendKeys(user.getFirstName());
         dataInputPage.inputLastName.sendKeys(user.getLastName());
         dataInputPage.inputZIPCode.sendKeys(user.getZipCode());
