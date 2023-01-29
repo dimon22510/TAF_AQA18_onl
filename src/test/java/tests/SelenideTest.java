@@ -45,8 +45,6 @@ public class SelenideTest extends BaseTest {
 
     @Test
     public void loginTest2() {
-        open("/");
-
         $(By.id("name")).setValue(ReadProperties.username());
         $("#password").setValue(ReadProperties.password());
 
@@ -60,5 +58,17 @@ public class SelenideTest extends BaseTest {
                 .shouldBe(visible)
                 .shouldHave(text("All Projects"));
 
+    }
+
+    @Test
+    public void sauceDemo() throws InterruptedException {
+        $("#user-name").setValue("standard_user");
+        $("#password").setValue("secret_sauce");
+        SelenideElement loginButton = $("#login-button");
+        loginButton
+                .should(exist)
+                .shouldBe(enabled)
+                .click();
+        Thread.sleep(2000);
     }
 }

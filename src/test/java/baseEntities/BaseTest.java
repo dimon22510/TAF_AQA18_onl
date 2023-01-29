@@ -7,6 +7,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
 
+import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 
 
@@ -20,9 +21,8 @@ public class BaseTest {
         Configuration.baseUrl = ReadProperties.getUrl();
         Configuration.timeout = 15000;
         Configuration.fastSetValue = true;
-//        Configuration.assertionMode = AssertionMode.SOFT;
-//        Configuration.headless = true;
-//        Configuration.reportsFolder = "target/";
+
+        open("");
     }
 
     @AfterMethod
