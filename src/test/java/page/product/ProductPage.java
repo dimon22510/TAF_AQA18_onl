@@ -11,10 +11,10 @@ public class ProductPage {
     private final By cartButtonLocator = By.cssSelector("#shopping_cart_container");
 
     public SelenideElement getButtonAddToCartLocator() {
-        return $(buttonAddToCartLocator).should(visible);
+        return $(buttonAddToCartLocator);
     }
 
     public SelenideElement getCartButtonLocator() {
-        return $(cartButtonLocator).should(visible);
+        return $(cartButtonLocator);
     }
 }

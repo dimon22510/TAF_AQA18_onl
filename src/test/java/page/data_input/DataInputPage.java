@@ -13,18 +13,18 @@ public class DataInputPage {
     private final By buttonContinueLocator = By.id("continue");
 
     public SelenideElement getInputFirstNameLocator() {
-        return $(inputFirstNameLocator).should(visible);
+        return $(inputFirstNameLocator);
     }
 
     public SelenideElement getInputLastNameLocator() {
-        return $(inputLastNameLocator).should(visible);
+        return $(inputLastNameLocator);
     }
 
     public SelenideElement getInputZIPCodeLocator() {
-        return $(inputZIPCodeLocator).should(visible);
+        return $(inputZIPCodeLocator);
     }
 
     public SelenideElement getButtonContinueLocator() {
-        return $(buttonContinueLocator).should(visible);
+        return $(buttonContinueLocator);
     }
 }

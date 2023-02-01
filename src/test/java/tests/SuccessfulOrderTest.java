@@ -3,8 +3,9 @@ package tests;
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
 import models.User;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import static com.codeborne.selenide.Condition.visible;
 
 
 public class SuccessfulOrderTest extends BaseTest {
@@ -19,14 +20,12 @@ public class SuccessfulOrderTest extends BaseTest {
                 .zipCode(ReadProperties.zipcode())
                 .build();
 
-        Assert.assertTrue(
                 userStep.loginSuccessful(user)
                         .addToCartProduct()
                         .goToCartPage()
                         .clickButtonCheckout()
                         .dataInputAndGoToOverview(user)
                         .clickFinish()
-                        .isPageOpened()
-        );
+                        .successfulOrderPage().shouldBe(visible);
     }
 }

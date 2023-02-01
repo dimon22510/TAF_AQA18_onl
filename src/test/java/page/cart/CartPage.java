@@ -10,6 +10,6 @@ public class CartPage {
     private final By buttonCheckoutLocator = By.id("checkout");
 
     public SelenideElement getButtonCheckoutLocator() {
-        return $(buttonCheckoutLocator).should(visible);
+        return $(buttonCheckoutLocator);
     }
 }

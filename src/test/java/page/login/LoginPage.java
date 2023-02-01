@@ -12,14 +12,14 @@ public class LoginPage {
     private final By loginButtonLocator = By.cssSelector("#login-button");
 
     public SelenideElement getUserNameInputLocator() {
-        return $(userNameInputLocator).should(visible);
+        return $(userNameInputLocator);
     }
 
     public SelenideElement getPasswordInputLocator() {
-        return $(passwordInputLocator).should(visible);
+        return $(passwordInputLocator);
     }
 
     public SelenideElement getLoginButtonLocator() {
-        return $(loginButtonLocator).should(visible);
+        return $(loginButtonLocator);
     }
 }
