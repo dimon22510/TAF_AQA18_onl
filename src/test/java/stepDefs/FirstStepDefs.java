@@ -61,7 +61,6 @@ public class FirstStepDefs extends BaseCucumberTest {
     public void userWithPasswordLoggedIn(String username, String password) {
         UserStep userStep = new UserStep(driver);
         dashboardPage = userStep.loginSuccessful(username, password);
-
     }
 
     @Then("title is {string}")

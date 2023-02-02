@@ -4,4 +4,4 @@ Feature: Проблемы простого огурца
     Given open browser
     * urlLoginPageOpened
     * user "atrostyanko@gmail.com" with password "Qwertyu_1" logged in
-    Then open setup page
+    Then open page param

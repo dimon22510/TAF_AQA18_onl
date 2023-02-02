@@ -11,7 +11,7 @@ public class SecondStepdefs extends BaseCucumberTest {
         this.baseCucumberTest = baseCucumberTest;
     }
 
-    @Then("open setup page")
+    @Then("open page param")
     public void openSetupPage() {
         driver.get(ReadProperties.getUrl() + "index.php?/admin/overview");
     }
