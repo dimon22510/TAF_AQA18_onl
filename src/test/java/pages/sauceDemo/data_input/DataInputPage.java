@@ -1,4 +1,4 @@
-package pages.data_input;
+package pages.sauceDemo.data_input;
 
 import baseEntities.BasePage;
 import org.openqa.selenium.WebDriver;

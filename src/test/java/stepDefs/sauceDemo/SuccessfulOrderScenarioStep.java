@@ -1,4 +1,4 @@
-package stepDefs;
+package stepDefs.sauceDemo;
 
 import baseEntities.BaseCucumberTest;
 import configuration.ReadProperties;
@@ -8,9 +8,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
-import pages.overview.OverviewPage;
-import steps.CheckoutSteps;
-import steps.UserSteps;
+import pages.sauceDemo.overview.OverviewPage;
+import steps.sauceDemo.CheckoutSteps;
+import steps.sauceDemo.UserSteps;
 
 public class SuccessfulOrderScenarioStep extends BaseCucumberTest {
     private BaseCucumberTest baseCucumberTest;

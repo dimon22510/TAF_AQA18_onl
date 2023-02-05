@@ -1,4 +1,4 @@
-package pages.product;
+package pages.sauceDemo.product;
 
 import baseEntities.BasePage;
 import org.openqa.selenium.WebDriver;

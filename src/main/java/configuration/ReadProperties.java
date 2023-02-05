@@ -19,6 +19,10 @@ public class ReadProperties {
         return properties.getProperty("url");
     }
 
+    public static String getUrl2() {
+        return properties.getProperty("url");
+    }
+
     public static String browserName() {
         return properties.getProperty("browser");
     }
@@ -30,6 +34,7 @@ public class ReadProperties {
     public static String password() {
         return properties.getProperty("password");
     }
+
     public static String firstname() {
         return properties.getProperty("firstname");
     }

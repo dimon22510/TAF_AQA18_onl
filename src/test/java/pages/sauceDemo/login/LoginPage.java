@@ -1,4 +1,4 @@
-package pages.login;
+package pages.sauceDemo.login;
 
 import baseEntities.BasePage;
 import org.openqa.selenium.WebDriver;

@@ -1,11 +1,11 @@
-package steps;
+package steps.sauceDemo;
 
 import baseEntities.BaseStep;
 import org.openqa.selenium.WebDriver;
-import pages.cart.CartPage;
-import pages.data_input.DataInputPage;
-import pages.overview.OverviewPage;
-import pages.product.ProductPage;
+import pages.sauceDemo.cart.CartPage;
+import pages.sauceDemo.data_input.DataInputPage;
+import pages.sauceDemo.overview.OverviewPage;
+import pages.sauceDemo.product.ProductPage;
 
 public class CheckoutSteps extends BaseStep {
     private CartPage checkProductAndPricePage;

@@ -1,4 +1,4 @@
-package pages.cart;
+package pages.sauceDemo.cart;
 import baseEntities.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

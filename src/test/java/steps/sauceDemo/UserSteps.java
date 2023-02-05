@@ -1,7 +1,8 @@
-package steps;
+package steps.sauceDemo;
 import baseEntities.BaseStep;
 import org.openqa.selenium.WebDriver;
-import pages.login.LoginPage;
+import pages.sauceDemo.login.LoginPage;
+import steps.sauceDemo.CheckoutSteps;
 
 public class UserSteps extends BaseStep {
     private LoginPage loginPage;
