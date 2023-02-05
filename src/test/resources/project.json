@@ -1,28 +1,30 @@
-[
-  {
-    "name": "QAQ_01 Project",
-    "announcement": "This is description!!",
-    "isShowAnnouncement": true,
-    "id": 21,
-    "floatId": 1.2,
-    "testcases": [
-      1,
-      3,
-      5
-    ],
-    "empty": null
-  },
-  {
-    "name": "QAQ_01 Project",
-    "announcement": "This is description!!",
-    "isShowAnnouncement": true,
-    "id": 21,
-    "floatId": 1.2,
-    "testcases": [
-      1,
-      3,
-      5
-    ],
-    "empty": null
+{
+  "breakfastMenu": {
+    "food": [
+      {
+        "name": "Бельгийские вафли",
+        "price": "$5.95",
+        "description": "две известных Бельгийских Вафли с обилием настоящего кленового сиропа",
+        "calories": "650"
+      },
+      {
+        "name": "Бельгийские Вафли с Земляникой",
+        "price": "$7.95",
+        "description": "легкие Бельгийские вафли с земляникой, покрытые взбитыми сливками",
+        "calories": "900"
+      },
+      {
+        "name": "Французский Тост",
+        "price": "$4.50",
+        "description": "толстые куски, сделанные из кусочков домашнего хлеба из опары",
+        "calories": "600"
+      },
+      {
+        "name": "Домашний Завтрак",
+        "price": "$6.95",
+        "description": "пара яиц, бекон или колбаса, тост, и наши всегда популярные картофельные оладьи",
+        "calories": "950"
+      }
+    ]
   }
-]
+}
