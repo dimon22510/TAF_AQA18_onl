@@ -7,7 +7,7 @@ import org.testng.annotations.DataProvider;
         plugin = {"json:target/cucumber.json", "html:target/site/cucumber-pretty"},
         glue = "stepDefs"
 )
-public class RunCucumberTest extends AbstractTestNGCucumberTests {
+public class    RunCucumberTest extends AbstractTestNGCucumberTests {
 
     @Override
     @DataProvider

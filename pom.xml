@@ -13,66 +13,76 @@
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <aspectj.version>1.9.5</aspectj.version>
-        <selenium.version>4.8.0</selenium.version>
+        <selenium.java.version>4.8.0</selenium.java.version>
+        <testng.verison>7.7.0</testng.verison>
+        <webdrivermanager.version>5.1.1</webdrivermanager.version>
+        <allure.testng.version>2.19.0</allure.testng.version>
+        <lombok.version>1.18.22</lombok.version>
+        <log4jcore.version>2.19.0</log4jcore.version>
+        <log4japi.version>2.19.0</log4japi.version>
+        <jacksondataformatxml.version>2.14.0</jacksondataformatxml.version>
+        <cucumberjava.version>7.11.0</cucumberjava.version>
+        <cucumbertestng.version>7.11.0</cucumbertestng.version>
+        <cucumberpicoconteiner.version>7.11.0</cucumberpicoconteiner.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.7.0</version>
+            <version>${testng.verison}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>${selenium.version}</version>
+            <version>${selenium.java.version}</version>
         </dependency>
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.1.1</version>
+            <version>${webdrivermanager.version}</version>
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
-            <version>2.19.0</version>
+            <version>${allure.testng.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.22</version>
+            <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.19.0</version>
+            <version>${log4jcore.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
-            <version>2.19.0</version>
+            <version>${log4japi.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-xml</artifactId>
-            <version>2.14.0</version>
+            <version>${jacksondataformatxml.version}</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>7.11.0</version>
+            <version>${cucumberjava.version}</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-testng</artifactId>
-            <version>7.11.0</version>
+            <version>${cucumbertestng.version}</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-picocontainer</artifactId>
-            <version>7.11.0</version>
+            <version>${cucumberpicoconteiner.version}</version>
         </dependency>
     </dependencies>
 
