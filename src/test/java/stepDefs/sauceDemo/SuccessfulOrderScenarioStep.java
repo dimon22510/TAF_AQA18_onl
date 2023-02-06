@@ -19,7 +19,6 @@ public class SuccessfulOrderScenarioStep extends BaseCucumberTest {
 
     public SuccessfulOrderScenarioStep(BaseCucumberTest baseCucumberTest) {
         this.baseCucumberTest = baseCucumberTest;
-
     }
 
     @Given("open browser")
@@ -56,7 +55,7 @@ public class SuccessfulOrderScenarioStep extends BaseCucumberTest {
 
     @And("user enters the data to be sent: FirstName {string} , LastName {string} , ZipCode {string}")
     public void userEntersHisOrHerData(String firstName, String lastName, String zipCode) {
-        checkoutSteps.dataInputAndGoToOverview(firstName,lastName,zipCode);
+        checkoutSteps.dataInputAndGoToOverview(firstName, lastName, zipCode);
     }
 
     @And("user successfully paid for the order")
@@ -67,7 +66,7 @@ public class SuccessfulOrderScenarioStep extends BaseCucumberTest {
 
     @Then("page with the successful order is open")
     public void pageWithTheSuccessfulOrderIsOpen() {
-       Assert.assertTrue(overviewPage.isPageOpened());
+        Assert.assertTrue(overviewPage.isPageOpened());
     }
 }
 
