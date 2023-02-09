@@ -14,7 +14,7 @@ public class Project {
     private boolean showAnnouncement;
     private boolean deleted;
 
-    public String getNameA() {
+    public String getName() {
         return nameA;
     }
 

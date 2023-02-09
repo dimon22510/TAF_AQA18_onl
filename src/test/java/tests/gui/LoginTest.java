@@ -3,7 +3,7 @@ package tests.gui;
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
 import io.qameta.allure.*;
-import models.User;
+import models.UserGUI;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.project.AddProjectPage;
@@ -18,13 +18,13 @@ public class LoginTest extends BaseTest {
     @Link(name = "catalog", type = "myLink", url = "https://onliner.by")
     @Severity(SeverityLevel.BLOCKER)
     public void loginSuccessfulTest() {
-        User user = new User.Builder()
+        UserGUI userGUI = new UserGUI.Builder()
                 .withEmail(ReadProperties.username())
                 .withPassword(ReadProperties.password())
                 .build();
 
         Assert.assertTrue(
-                userStep.loginSuccessful(user)
+                userStep.loginSuccessful(userGUI)
                         .isPageOpened()
         );
     }
