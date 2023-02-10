@@ -39,7 +39,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"name\": \"Test_Milestone2\",\r\n\"description\": \"Сreated a new milestone\"\r\n}",
+							"raw": "{\r\n\"name\": \"New_Milestione12345\",\r\n\"description\": \"Сreated a new milestone\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -107,6 +107,10 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
 						"url": {
 							"raw": "{{TestRail_url\n}}/index.php?/api/v2/delete_milestone/{{Milestone_id}}",
 							"host": [
@@ -126,19 +130,142 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Cases",
+			"item": [
+				{
+					"name": "GET Case",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TestRail_url\n}}/index.php?/api/v2/get_case/{{Case_id\n}}",
+							"host": [
+								"{{TestRail_url\n}}"
+							],
+							"path": [
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "/api/v2/get_case/{{Case_id\n}}",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Update Cases",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"priority_id\": 1,\r\n    \"estimate\": \"5m\"\r\n}"
+						},
+						"url": {
+							"raw": "{{TestRail_url\n}}/index.php?/api/v2/update_case/{{Case_id\n}}",
+							"host": [
+								"{{TestRail_url\n}}"
+							],
+							"path": [
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "/api/v2/update_case/{{Case_id\n}}",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Move case to section",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"case_ids\": [2]\r\n}"
+						},
+						"url": {
+							"raw": "{{TestRail_url\n}}/index.php?/api/v2/move_cases_to_section/{{Section_id\n}}",
+							"host": [
+								"{{TestRail_url\n}}"
+							],
+							"path": [
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "/api/v2/move_cases_to_section/{{Section_id\n}}",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Delete case",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{TestRail_url\n}}/index.php?/api/v2/delete_case/{{Case_id\n}}",
+							"host": [
+								"{{TestRail_url\n}}"
+							],
+							"path": [
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "/api/v2/delete_case/{{Case_id\n}}",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"auth": {
 		"type": "basic",
 		"basic": [
 			{
-				"key": "password",
-				"value": "Qwertyu_1",
+				"key": "username",
+				"value": "{{Login}}",
 				"type": "string"
 			},
 			{
-				"key": "username",
-				"value": "atrostyanko@gmail.com",
+				"key": "password",
+				"value": "{{Password}}",
 				"type": "string"
 			}
 		]
