@@ -21,7 +21,7 @@ import static io.restassured.RestAssured.given;
 public class TestRailApiTest2 extends BaseApiGsonTest {
 
     @Test
-    public void getUser() {
+    public void getUser() {  //сериализация
         int userID = 1;
 
         String endpoint = "index.php?/api/v2/get_user/{user_id}";
@@ -50,7 +50,7 @@ public class TestRailApiTest2 extends BaseApiGsonTest {
     }
 
     @Test
-    public void getUser1() {
+    public void getUser1() {    //десериализация
         int userID = 1;
 
         String endpoint = "index.php?/api/v2/get_user/{user_id}";
