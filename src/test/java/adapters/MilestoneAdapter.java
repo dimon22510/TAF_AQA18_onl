@@ -27,10 +27,10 @@ public class MilestoneAdapter extends BaseAdapter {
                 .getInt("id");
     }
 
-    public void get(int milestoneId, Milestone expectedMilestone){
+    public void get(int milestoneId, Milestone expectedMilestone) {
         given()
                 .pathParam("milestone_id", milestoneId)
-        .when()
+                .when()
                 .get(Endpoints.GET_MILESTONE)
                 .then()
                 .statusCode(HttpStatus.SC_OK)
@@ -63,3 +63,4 @@ public class MilestoneAdapter extends BaseAdapter {
                 .statusCode(HttpStatus.SC_OK);
     }
 }
+

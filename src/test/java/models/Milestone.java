@@ -17,10 +17,6 @@ public class Milestone {
     private String name;
 
     @Expose
-    @SerializedName(value = "refs")
-    private String references;
-
-    @Expose
     private String description;
 
     @Expose
@@ -28,9 +24,14 @@ public class Milestone {
     private int dueOn;
 
     @Expose
+    @SerializedName(value = "refs")
+    private String references;
+
+    @Expose
     @SerializedName(value = "start_on")
     private int startOn;
 
-
+    @Expose
+    @SerializedName(value = "is_completed")
     private boolean completed;
 }

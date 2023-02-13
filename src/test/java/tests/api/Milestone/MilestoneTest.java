@@ -45,11 +45,9 @@ public class MilestoneTest extends BaseApiTest {
 
     @Test(dependsOnMethods = "updateMilestone")
     public void deleteMilestone() {
-        given()
-                .pathParam("milestone_id", milestoneId)
-                .when()
-                .post(Endpoints.DELETE_MILESTONE)
-                .then()
-                .statusCode(HttpStatus.SC_OK);
+        milestoneAdapter.delete(milestoneId);
     }
+
+
+
 }
