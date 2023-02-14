@@ -29,5 +29,6 @@ public class HttpClientTest {
 
         Assert.assertEquals(httpResponse.getStatusLine().getStatusCode(),
                 HttpStatus.SC_OK);
+
     }
 }
