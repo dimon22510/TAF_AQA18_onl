@@ -23,8 +23,8 @@ public class TestRailApiTest1 extends BaseApiTest {
     public void addProject1() {
         String endpoint = "index.php?/api/v2/add_project";
 
-        Project expectedProject = new Project();
-        expectedProject.setNameA("WP_Project_01");
+//        Project expectedProject = new Project();
+        expectedProject.setName("WP_Project_01");
         expectedProject.setAnnouncement("This is a description");
         expectedProject.setType(1);
         expectedProject.setShowAnnouncement(true);
@@ -53,8 +53,8 @@ public class TestRailApiTest1 extends BaseApiTest {
     public void addProject2() {
         String endpoint = "index.php?/api/v2/add_project";
 
-        Project expectedProject = new Project();
-        expectedProject.setNameA("WP_Project_01");
+//        Project expectedProject = new Project();
+        expectedProject.setName("WP_Project_01");
         expectedProject.setAnnouncement("This is a description");
         expectedProject.setType(1);
         expectedProject.setShowAnnouncement(true);
@@ -77,8 +77,8 @@ public class TestRailApiTest1 extends BaseApiTest {
     public void addProject3() {
         String endpoint = "index.php?/api/v2/add_project";
 
-        Project expectedProject = new Project();
-        expectedProject.setNameA("WP_Project_03");
+//        Project expectedProject = new Project();
+        expectedProject.setName("WP_Project_03");
         expectedProject.setAnnouncement("This is a description");
         expectedProject.setType(1);
         expectedProject.setShowAnnouncement(true);
@@ -99,8 +99,8 @@ public class TestRailApiTest1 extends BaseApiTest {
         ProjectAdapter projectAdapter = new ProjectAdapter();
 
 
-        Project expectedProject = new Project();
-        expectedProject.setNameA("WP_Project_03");
+//        Project expectedProject = new Project();
+        expectedProject.setName("WP_Project_03");
         expectedProject.setAnnouncement("This is a description");
         expectedProject.setType(1);
         expectedProject.setShowAnnouncement(true);
@@ -114,8 +114,8 @@ public class TestRailApiTest1 extends BaseApiTest {
     public void addProject4() {
         String endpoint = "index.php?/api/v2/add_project";
 
-        Project expectedProject = new Project();
-        expectedProject.setNameA("WP_Project_04");
+//        Project expectedProject = new Project();
+        expectedProject.setName("WP_Project_04");
         expectedProject.setAnnouncement("This is a description");
         expectedProject.setType(1);
         expectedProject.setShowAnnouncement(true);
@@ -139,8 +139,8 @@ public class TestRailApiTest1 extends BaseApiTest {
     public void addProject5() {
         String endpoint = "index.php?/api/v2/add_project";
 
-        expectedProject = new Project();
-        expectedProject.setNameA("WP_Project_05");
+//        expectedProject = new Project();
+        expectedProject.setName("WP_Project_05");
         expectedProject.setAnnouncement("This is a description");
         expectedProject.setType(1);
         expectedProject.setShowAnnouncement(true);

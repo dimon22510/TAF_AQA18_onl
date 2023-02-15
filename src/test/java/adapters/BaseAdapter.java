@@ -2,9 +2,12 @@ package adapters;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import models.Project;
 import org.testng.annotations.BeforeTest;
 
 public class BaseAdapter {
+    protected int projectId;
+    protected Project expectedProject;
     protected Gson gson;
 
     @BeforeTest

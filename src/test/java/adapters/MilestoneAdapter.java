@@ -2,6 +2,7 @@ package adapters;
 
 import io.restassured.mapper.ObjectMapperType;
 import models.Milestone;
+import models.Project;
 import org.apache.http.HttpStatus;
 import utils.Endpoints;
 
@@ -9,8 +10,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
 public class MilestoneAdapter extends BaseAdapter {
-
-    public int add(Milestone milestone, int projectId) {
+    public int addMilestone(Milestone milestone, int projectId) {
         return given()
                 .pathParam("project_id", projectId)
                 .body(milestone, ObjectMapperType.GSON)
@@ -27,7 +27,7 @@ public class MilestoneAdapter extends BaseAdapter {
                 .getInt("id");
     }
 
-    public void get(int milestoneId, Milestone expectedMilestone) {
+    public void getMilestone(Milestone expectedMilestone, int milestoneId) {
         given()
                 .pathParam("milestone_id", milestoneId)
                 .when()
@@ -40,9 +40,9 @@ public class MilestoneAdapter extends BaseAdapter {
                 .body("start_on", equalTo(expectedMilestone.getStartOn()));
     }
 
-    public void update(Milestone milestone) {
+    public void updateMilestone(Milestone milestone, int milestoneId) {
         given()
-                .pathParam("milestone_id", milestone.getId())
+                .pathParam("milestone_id", milestoneId)
                 .body(milestone, ObjectMapperType.GSON)
                 .when()
                 .post(Endpoints.UPDATE_MILESTONE)
@@ -54,7 +54,7 @@ public class MilestoneAdapter extends BaseAdapter {
                 .body("start_on", equalTo(milestone.getStartOn()));
     }
 
-    public void delete(int milestoneId) {
+    public void deleteMilestone(int milestoneId) {
         given()
                 .pathParam("milestone_id", milestoneId)
                 .when()
