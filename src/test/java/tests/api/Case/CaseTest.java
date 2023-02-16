@@ -70,5 +70,8 @@ public class CaseTest extends BaseApiTest {
 //        caseAdapter.delete(expectedCase.getId());
 //    }
 
+    @Test
+    public void
+
 
 }
