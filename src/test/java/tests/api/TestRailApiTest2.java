@@ -146,7 +146,8 @@ public class TestRailApiTest2 extends BaseApiGsonTest {
                 .extract()
                 .response();
 
-        Type listType = new TypeToken<ArrayList<User>>(){}.getType();
+        Type listType = new TypeToken<ArrayList<User>>() {
+        }.getType();
 
         List<User> actualUserList = gson.fromJson(response.getBody().asPrettyString(),
                 listType);

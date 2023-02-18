@@ -11,7 +11,7 @@ public class MilestoneTest extends BaseApiTest {
         projectId = projectAdapter.addProject();
 
         expectedMilestone = Milestone.builder()
-                .name("MilestoneByStremous")
+                .name("MilestoneByTest")
                 .description("TestNumber1")
                 .dueOn(12312)
                 .startOn(12332)

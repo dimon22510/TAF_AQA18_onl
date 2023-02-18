@@ -94,21 +94,21 @@ public class TestRailApiTest1 extends BaseApiTest {
                 .statusCode(HttpStatus.SC_OK);
     }
 
-    @Test
-    public void addProject3_1() {
-        ProjectAdapter projectAdapter = new ProjectAdapter();
-
-
-//        Project expectedProject = new Project();
-        expectedProject.setName("WP_Project_03");
-        expectedProject.setAnnouncement("This is a description");
-        expectedProject.setType(1);
-        expectedProject.setShowAnnouncement(true);
-
-
-        Project actualProject = projectAdapter.add(expectedProject);
-        Assert.assertEquals(actualProject, expectedProject);
-    }
+//    @Test
+//    public void addProject3_1() {
+//        ProjectAdapter projectAdapter = new ProjectAdapter();
+//
+//
+////        Project expectedProject = new Project();
+//        expectedProject.setName("WP_Project_03");
+//        expectedProject.setAnnouncement("This is a description");
+//        expectedProject.setType(1);
+//        expectedProject.setShowAnnouncement(true);
+//
+//
+//        Project actualProject = projectAdapter.add(expectedProject);
+//        Assert.assertEquals(actualProject, expectedProject);
+//    }
 
     @Test
     public void addProject4() {

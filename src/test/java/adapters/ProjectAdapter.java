@@ -30,7 +30,7 @@ public class ProjectAdapter extends BaseAdapter {
 
     public int addProject() {
         expectedProject = new Project();
-        expectedProject.setName("ProjectByStremous");
+        expectedProject.setName("ProjectByTest");
         expectedProject.setAnnouncement("This is a description");
         expectedProject.setType(1);
         expectedProject.setShowAnnouncement(true);

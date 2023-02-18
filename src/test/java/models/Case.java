@@ -9,6 +9,9 @@ import lombok.*;
 @Setter
 @EqualsAndHashCode
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Case {
     @Expose
     private int id;
@@ -35,6 +38,7 @@ public class Case {
 
     @Expose
     private String estimate;
+
 
 
 }

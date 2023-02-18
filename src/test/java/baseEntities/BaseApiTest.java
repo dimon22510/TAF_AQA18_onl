@@ -3,11 +3,13 @@ package baseEntities;
 import adapters.CaseAdapter;
 import adapters.MilestoneAdapter;
 import adapters.ProjectAdapter;
+import adapters.SectionAdapter;
 import configuration.ReadProperties;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import models.Case;
 import models.Milestone;
+import models.Section;
 import org.apache.http.protocol.HTTP;
 import org.testng.annotations.BeforeClass;
 
@@ -16,12 +18,17 @@ import static io.restassured.RestAssured.given;
 public class BaseApiTest {
     protected int projectId;
     protected int milestoneId;
+    protected int sectionId1;
+    protected int sectionId2;
+    protected int caseId;
     protected MilestoneAdapter milestoneAdapter;
     protected ProjectAdapter projectAdapter;
-    protected Milestone expectedMilestone;
-    protected Case expectedCase;
-    protected Case secondCase;
+    protected SectionAdapter sectionAdapter;
     protected CaseAdapter caseAdapter;
+    protected Case expectedCase;
+    protected Milestone expectedMilestone;
+    protected Section expectedSection1;
+    protected Section expectedSection2;
 
 
     @BeforeClass
@@ -43,5 +50,6 @@ public class BaseApiTest {
         milestoneAdapter = new MilestoneAdapter();
         projectAdapter = new ProjectAdapter();
         caseAdapter = new CaseAdapter();
+        sectionAdapter = new SectionAdapter();
     }
 }
