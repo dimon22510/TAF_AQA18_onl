@@ -12,12 +12,9 @@ public class Section {
     @Expose
     private String name;
 
-
     @Expose
     private String description;
 
-
     @Expose
     private int suite_id;
-
 }

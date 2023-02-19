@@ -38,7 +38,4 @@ public class Case {
 
     @Expose
     private String estimate;
-
-
-
 }

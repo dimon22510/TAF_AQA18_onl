@@ -6,6 +6,11 @@ import org.testng.annotations.Test;
 
 
 public class MilestoneTest extends BaseApiTest {
+
+    //Это CRUD тест, необходимо запускать весь класс, так как все тесты зависимы методом dependsOnMethods.
+    //Так же я добавил удаление проекта чтобы не плодить проекты.
+    //При запуске тестов, будет выводиться информация о создании проекта и создании milestone с их id-ишниками.
+
     @Test
     public void addMilestone() {
         projectId = projectAdapter.addProject();
@@ -41,5 +46,10 @@ public class MilestoneTest extends BaseApiTest {
     @Test(dependsOnMethods = "updateMilestone")
     public void deleteMilestone() {
         milestoneAdapter.deleteMilestone(milestoneId);
+    }
+
+    @Test(dependsOnMethods = "deleteMilestone")
+    public void deleteProject() {
+        projectAdapter.deleteProject(projectId);
     }
 }

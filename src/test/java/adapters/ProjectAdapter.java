@@ -9,25 +9,6 @@ import static io.restassured.RestAssured.given;
 
 public class ProjectAdapter extends BaseAdapter {
 
-
-//    public Project add(Project project) {
-//        String jsonBody = gson.toJson(project);
-//        return add(jsonBody);
-//    }
-//
-//    public Project add(String jsonBody) {
-//        return given()
-//                .body(jsonBody)
-//                .log().all()
-//                .when()
-//                .post(Endpoints.ADD_PROJECT)
-//                .then()
-//                .log().body()
-//                .statusCode(HttpStatus.SC_OK)
-//                .extract()
-//                .as(Project.class, ObjectMapperType.GSON);
-//    }
-
     public int addProject() {
         expectedProject = new Project();
         expectedProject.setName("ProjectByTest");
@@ -45,5 +26,14 @@ public class ProjectAdapter extends BaseAdapter {
                 .extract()
                 .jsonPath()
                 .getInt("id");
+    }
+
+    public void deleteProject(int projectId) {
+        given()
+                .pathParam("project_id", projectId)
+                .when()
+                .post(Endpoints.DELETE_PROJECT)
+                .then()
+                .statusCode(HttpStatus.SC_OK);
     }
 }

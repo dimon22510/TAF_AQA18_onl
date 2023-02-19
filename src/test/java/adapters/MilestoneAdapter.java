@@ -2,7 +2,6 @@ package adapters;
 
 import io.restassured.mapper.ObjectMapperType;
 import models.Milestone;
-import models.Project;
 import org.apache.http.HttpStatus;
 import utils.Endpoints;
 
@@ -17,6 +16,7 @@ public class MilestoneAdapter extends BaseAdapter {
                 .when()
                 .post(Endpoints.ADD_MILESTONE)
                 .then()
+                .log().body()
                 .statusCode(HttpStatus.SC_OK)
                 .body("name", equalTo(milestone.getName()))
                 .body("description", equalTo(milestone.getDescription()))

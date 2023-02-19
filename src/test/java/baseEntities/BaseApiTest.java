@@ -9,7 +9,7 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import models.Case;
 import models.Milestone;
-import models.Section;
+import models.MoveCase;
 import org.apache.http.protocol.HTTP;
 import org.testng.annotations.BeforeClass;
 
@@ -27,9 +27,7 @@ public class BaseApiTest {
     protected CaseAdapter caseAdapter;
     protected Case expectedCase;
     protected Milestone expectedMilestone;
-    protected Section expectedSection1;
-    protected Section expectedSection2;
-
+    protected MoveCase moveCase;
 
     @BeforeClass
     public void setupApi() {
@@ -39,17 +37,11 @@ public class BaseApiTest {
                 .auth().preemptive().basic(ReadProperties.username(), ReadProperties.password())
                 .header(HTTP.CONTENT_TYPE, ContentType.JSON);
 
-//        RestAssured.config = RestAssuredConfig.config()
-//                .objectMapperConfig(new ObjectMapperConfig().gsonObjectMapperFactory(
-//                        (cls, charset) -> {
-//                            Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
-//                            return gson;
-//                        }
-//                ));
 
         milestoneAdapter = new MilestoneAdapter();
         projectAdapter = new ProjectAdapter();
         caseAdapter = new CaseAdapter();
         sectionAdapter = new SectionAdapter();
+        moveCase = new MoveCase();
     }
 }
