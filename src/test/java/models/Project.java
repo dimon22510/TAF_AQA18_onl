@@ -5,8 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 public class Project {
-    @SerializedName(value = "name")
-    private String nameA;
+    private String name;
     private String announcement;
     @SerializedName(value = "suite_mode")
     private int type;
@@ -15,11 +14,11 @@ public class Project {
     private boolean deleted;
 
     public String getName() {
-        return nameA;
+        return name;
     }
 
-    public void setNameA(String nameA) {
-        this.nameA = nameA;
+    public void setName(String nameA) {
+        this.name = nameA;
     }
 
     public String getAnnouncement() {
@@ -57,7 +56,7 @@ public class Project {
     @Override
     public String toString() {
         return "Project{" +
-                "name='" + nameA + '\'' +
+                "name='" + name + '\'' +
                 ", announcement='" + announcement + '\'' +
                 ", type=" + type +
                 ", showAnnouncement=" + showAnnouncement +
@@ -70,11 +69,11 @@ public class Project {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Project project = (Project) o;
-        return type == project.type && showAnnouncement == project.showAnnouncement && Objects.equals(nameA, project.nameA) && Objects.equals(announcement, project.announcement);
+        return type == project.type && showAnnouncement == project.showAnnouncement && Objects.equals(name, project.name) && Objects.equals(announcement, project.announcement);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nameA, announcement, type, showAnnouncement);
+        return Objects.hash(name, announcement, type, showAnnouncement);
     }
 }
