@@ -26,13 +26,13 @@ public class SimpleDBTest extends BaseApiTest {
             while (rs.next()) {
                 int userID = rs.getInt("id");
                 String firstname = rs.getString("firstname");
-                String lastname = rs.getString("secondname");
+                String lastname = rs.getString("lastname");
                 String email = rs.getString("email");
                 int age = rs.getInt(5);
 
                 logger.info("ID: " + userID);
                 logger.info("FirstName: " + firstname);
-                logger.info("Secondname: " + lastname);
+                logger.info("LastName: " + lastname);
                 logger.info("Email: " + email);
                 logger.info("Age: " + age);
             }
