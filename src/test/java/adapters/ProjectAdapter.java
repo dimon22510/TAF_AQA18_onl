@@ -9,22 +9,33 @@ import static io.restassured.RestAssured.given;
 
 public class ProjectAdapter extends BaseAdapter {
 
+    public int addProject() {
+    expectedProject = Project.builder()
+            .name("ProjectByTest")
+            .announcement("This is a description")
+            .showAnnouncement(true)
+            .type(1)
+            .build();
 
-    public Project add(Project project) {
-        String jsonBody = gson.toJson(project);
-        return add(jsonBody);
-    }
 
-    public Project add(String jsonBody) {
-        return given()
-                .body(jsonBody)
-                .log().all()
+        return projectId = given()
+                .body(expectedProject, ObjectMapperType.GSON)
                 .when()
                 .post(Endpoints.ADD_PROJECT)
                 .then()
                 .log().body()
                 .statusCode(HttpStatus.SC_OK)
                 .extract()
-                .as(Project.class, ObjectMapperType.GSON);
+                .jsonPath()
+                .getInt("id");
+}
+
+    public void deleteProject(int projectId) {
+        given()
+                .pathParam("project_id", projectId)
+                .when()
+                .post(Endpoints.DELETE_PROJECT)
+                .then()
+                .statusCode(HttpStatus.SC_OK);
     }
 }
