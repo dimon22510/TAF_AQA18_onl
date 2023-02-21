@@ -11,6 +11,11 @@ import lombok.*;
 @EqualsAndHashCode
 @ToString
 public class Project {
+
+    @EqualsAndHashCode.Exclude
+    private int id;
+
+
     @Expose
     private String name;
 

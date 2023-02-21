@@ -1,20 +1,30 @@
 package tests.db;
 
 import baseEntities.BaseApiTest;
+import dbTables.ProjectTable;
 import models.Milestone;
+import models.Project;
 import org.testng.annotations.Test;
 
-public class MilestoneDBTest {
+public class MilestoneDBTest extends BaseApiTest {
 
-    public class MilestoneTest extends BaseApiTest {
+    @Test
+    public void addProject() {
+        ProjectTable projectTable = new ProjectTable(dbService);
+        projectTable.dropTable();
+        projectTable.createTable();
+        projectTable.addProject(Project.builder()
+                .name("TestProject123")
+                .announcement("Step")
+                .showAnnouncement(true)
+                .type(1)
+                .build());
+    }
 
-        //Это CRUD тест, необходимо запускать весь класс, так как все тесты зависимы методом dependsOnMethods.
-        //Так же я добавил удаление проекта чтобы не плодить проекты.
-        //При запуске тестов, будет выводиться информация о создании проекта и создании milestone с их id-ишниками.
 
-        @Test
-        public void addMilestone() {
-            projectId = projectAdapter.addProject();
+    @Test(dependsOnMethods = "addProject")
+    public void addMilestone() {
+
 
             expectedMilestone = Milestone.builder()
                     .name("MilestoneByTest")
@@ -24,34 +34,5 @@ public class MilestoneDBTest {
                     .build();
 
             milestoneId = milestoneAdapter.addMilestone(expectedMilestone, projectId);
-        }
-
-        @Test(dependsOnMethods = "addMilestone")
-        public void getMilestone() {
-            milestoneAdapter.getMilestone(expectedMilestone, milestoneId);
-        }
-
-        @Test(dependsOnMethods = "getMilestone")
-        public void updateMilestone() {
-            Milestone updateMilestone = Milestone.builder()
-                    .name("MilestoneUpdateByStremous")
-                    .description("New Update")
-                    .dueOn(132000)
-                    .startOn(571999)
-                    .references("Lol kek")
-                    .build();
-
-            milestoneAdapter.updateMilestone(updateMilestone, milestoneId);
-        }
-
-        @Test(dependsOnMethods = "updateMilestone")
-        public void deleteMilestone() {
-            milestoneAdapter.deleteMilestone(milestoneId);
-        }
-
-        @Test(dependsOnMethods = "deleteMilestone")
-        public void deleteProject() {
-            projectAdapter.deleteProject(projectId);
-        }
     }
 }

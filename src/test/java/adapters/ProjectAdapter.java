@@ -1,15 +1,22 @@
 package adapters;
 
+import dbTables.ProjectTable;
 import io.restassured.mapper.ObjectMapperType;
 import models.Project;
 import org.apache.http.HttpStatus;
+import services.DataBaseService;
 import utils.Endpoints;
 
 import static io.restassured.RestAssured.given;
 
 public class ProjectAdapter extends BaseAdapter {
 
+    public ProjectAdapter(DataBaseService dbService) {
+        projectTable = new ProjectTable(dbService);
+    }
+
     public int addProject() {
+
     expectedProject = Project.builder()
             .name("ProjectByTest")
             .announcement("This is a description")
@@ -18,8 +25,9 @@ public class ProjectAdapter extends BaseAdapter {
             .build();
 
 
+
         return projectId = given()
-                .body(expectedProject, ObjectMapperType.GSON)
+                .body(projectTable, ObjectMapperType.GSON)
                 .when()
                 .post(Endpoints.ADD_PROJECT)
                 .then()
@@ -28,7 +36,7 @@ public class ProjectAdapter extends BaseAdapter {
                 .extract()
                 .jsonPath()
                 .getInt("id");
-}
+    }
 
     public void deleteProject(int projectId) {
         given()

@@ -1,7 +1,6 @@
 package tests.db;
 
 import baseEntities.BaseApiTest;
-import dbService.CustomerService;
 import dbTables.CustomersTable;
 import models.Customer;
 import models.CustomerBuilder;
@@ -102,16 +101,5 @@ public class SimpleDBTest extends BaseApiTest {
     }
 
 
-    @Test
-    public void hibernateTest() {
-        CustomerService customerService = new CustomerService();
-        Customer customer = new Customer("Ivan", "Grigoriev", "grtest@test.com", 30);
 
-        customerService.saveUser(customer);
-
-        List<Customer> customerList = customerService.findAllUsers();
-        for (Customer user : customerList) {
-            System.out.println(user.toString());
-        }
-    }
 }

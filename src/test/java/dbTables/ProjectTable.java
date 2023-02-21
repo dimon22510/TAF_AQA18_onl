@@ -6,6 +6,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import services.DataBaseService;
 
+import java.sql.ResultSet;
+
 public class ProjectTable {
 
     Logger logger = LogManager.getLogger(ProjectTable.class);
@@ -39,10 +41,16 @@ public class ProjectTable {
         dbService.executeSQL(dropTableSQL);
     }
 
+    public ResultSet getProject() {
+        String sql = "SELECT * FROM public.projects;";
+
+        return dbService.executeQuery(sql);
+    }
+
     public void addProject(Project project) {
         String insertTableSQL = "INSERT INTO public.projects(" +
                 "id, name, announcement, show_announcement, suite_mode)" +
-                "VALUES (" + project.getName() + "', '" + project.getAnnouncement() +
+                "VALUES ('" + project.getId() + "', '" + project.getName() + "', '" + project.getAnnouncement() +
                 "', '" + project.isShowAnnouncement() + "', " + project.getType() + ");";
 
         dbService.executeSQL(insertTableSQL);

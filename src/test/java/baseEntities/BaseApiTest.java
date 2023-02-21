@@ -33,7 +33,7 @@ public class BaseApiTest {
         dbService = new DataBaseService();
 
         milestoneAdapter = new MilestoneAdapter();
-        projectAdapter = new ProjectAdapter();
+//        projectAdapter = new ProjectAdapter(dbService);
     }
     @AfterTest
     public void tearDown() {
