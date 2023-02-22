@@ -11,10 +11,8 @@ import lombok.*;
 @EqualsAndHashCode
 @ToString
 public class Project {
-
     @EqualsAndHashCode.Exclude
     private int id;
-
 
     @Expose
     private String name;
@@ -29,6 +27,4 @@ public class Project {
     @Expose
     @SerializedName(value = "show_announcement")
     private boolean showAnnouncement;
-//    private boolean deleted;
-
 }

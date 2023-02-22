@@ -41,22 +41,18 @@ public class ProjectTable {
         dbService.executeSQL(dropTableSQL);
     }
 
-    public ResultSet getProject() {
-        String sql = "SELECT * FROM public.projects;";
-
-        return dbService.executeQuery(sql);
-    }
-
     public void addProject(Project project) {
         String insertTableSQL = "INSERT INTO public.projects(" +
-                "id, name, announcement, show_announcement, suite_mode)" +
-                "VALUES ('" + project.getId() + "', '" + project.getName() + "', '" + project.getAnnouncement() +
+                "name, announcement, show_announcement, suite_mode)" +
+                "VALUES ('" + project.getName() + "', '" + project.getAnnouncement() +
                 "', '" + project.isShowAnnouncement() + "', " + project.getType() + ");";
 
         dbService.executeSQL(insertTableSQL);
     }
 
-    public void deleteProject(int id) {
+    public void deleteProjectById(int id) {
+        String deleteProjectSQL = "DELETE FROM public.projects WHERE id = " + id + ";";
 
+        dbService.executeSQL(deleteProjectSQL);
     }
 }

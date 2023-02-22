@@ -9,25 +9,27 @@ import utils.Endpoints;
 
 import static io.restassured.RestAssured.given;
 
-public class ProjectAdapter extends BaseAdapter {
+public class ProjectAdapter {
+    private Project expectedProject;
+    private ProjectTable projectTable;
+    private int projectId;
 
     public ProjectAdapter(DataBaseService dbService) {
         projectTable = new ProjectTable(dbService);
     }
 
     public int addProject() {
+        expectedProject = Project.builder()
+                .name("ProjectByTest123")
+                .announcement("This is a description")
+                .showAnnouncement(true)
+                .type(1)
+                .build();
 
-    expectedProject = Project.builder()
-            .name("ProjectByTest")
-            .announcement("This is a description")
-            .showAnnouncement(true)
-            .type(1)
-            .build();
-
-
+        projectTable.addProject(expectedProject);
 
         return projectId = given()
-                .body(projectTable, ObjectMapperType.GSON)
+                .body(expectedProject, ObjectMapperType.GSON)
                 .when()
                 .post(Endpoints.ADD_PROJECT)
                 .then()
@@ -45,5 +47,7 @@ public class ProjectAdapter extends BaseAdapter {
                 .post(Endpoints.DELETE_PROJECT)
                 .then()
                 .statusCode(HttpStatus.SC_OK);
+
+        projectTable.deleteProjectById(projectId);
     }
 }
